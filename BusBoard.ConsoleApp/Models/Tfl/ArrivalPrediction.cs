@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BusBoard.ConsoleApp.Models
+namespace BusBoard.ConsoleApp.Models.Tfl
 {
     public class ArrivalPrediction
     {

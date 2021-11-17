@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
-using BusBoard.ConsoleApp.Models;
+using BusBoard.ConsoleApp.Models.Tfl;
 using RestSharp;
 
 namespace BusBoard.ConsoleApp.Client
@@ -24,6 +24,21 @@ namespace BusBoard.ConsoleApp.Client
             );
             var response = _client.Get<List<ArrivalPrediction>>(request);
             return response.Data;
+        }
+
+        public List<StopPoint> GetBusStopPointsWithin(double latitude, double longitude, int radius = 200)
+        {
+            var request = new RestRequest(
+                String.Format(
+                    "StopPoint?lat={0}&lon={1}&radius={2}&stopTypes=NaptanPublicBusCoachTram&modes=bus&app_key={3}",
+                    latitude,
+                    longitude,
+                    radius,
+                    AppKey
+                )
+            );
+            var response = _client.Get<StopPointPageResponse>(request);
+            return response.Data.StopPoints;
         }
     }
 }

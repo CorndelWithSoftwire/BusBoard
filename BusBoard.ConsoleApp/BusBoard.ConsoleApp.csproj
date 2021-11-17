@@ -48,8 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\PostcodeClient.cs" />
     <Compile Include="Client\TflClient.cs" />
-    <Compile Include="Models\ArrivalPrediction.cs" />
+    <Compile Include="Models\Postcode\PostcodeData.cs" />
+    <Compile Include="Models\Postcode\PostcodeLookupResponse.cs" />
+    <Compile Include="Models\Tfl\ArrivalPrediction.cs" />
+    <Compile Include="Models\Tfl\StopPoint.cs" />
+    <Compile Include="Models\Tfl\StopPointPageResponse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
