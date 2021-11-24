@@ -18,17 +18,21 @@ namespace BusBoard.ConsoleApp
     }
     public static void fiveBus(string code)
     {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             //https://api.tfl.gov.uk/StopPoint/490008660N/Arrivals
-            /*
+            
             List<string> stops = new List<string>();  //get input from api
-            for(int i = 0;i < 5;i++)
+            /*for(int i = 0;i < 5;i++)
             {
                 string stop = stops[i];
                 Console.WriteLine(stop);
             }
             */
+
             TfLHandler t = new TfLHandler();
             t.getArrivals(code);
+            Console.ReadLine();
     }
   }
 }
