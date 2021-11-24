@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http.Headers;
+using System.Net.Http;
+using System.Web;
 
 namespace BusBoard.ConsoleApp
 {
@@ -13,18 +16,28 @@ namespace BusBoard.ConsoleApp
         public void getArrivals(string code)
         {
             var client = new RestClient("https://api.tfl.gov.uk");
-            client.Authenticator = new HttpBasicAuthenticator("username","password");
-            var request = new RestRequest("StopPoint/"+code+"/Arrivals",Method.GET, DataFormat.Json);
+            var queryString = HttpUtility.ParseQueryString(string.Empty);
+
+            var uri = new RestRequest("/StopPoint/" + code + "/Arrivals", Method.GET, DataFormat.Json);
+
+            List<Arrival> response = client.Get<List<Arrival>>(uri).Data;
+            for(int i = 0; i <5; i++)
+            {
+                Arrival a = response[i];
+                Console.WriteLine(a.VehicleID + " " + a.DestinationName + " " + a.TimeToStation + " " + a.ExpectedArrival);
+            }
+            Console.ReadLine();
+
+            
+            /*client.Authenticator = new HttpBasicAuthenticator("username","password");
+            var request = 
             
             var reponse = client.Execute(request);
-            if(reponse.Content == null)
-            {
-                throw new Exception("got here");
-            }
+
             Console.WriteLine(reponse.ContentType);
             Console.WriteLine(reponse.Content);
-            Console.WriteLine("got here");
-            
+            Console.WriteLine("got this");*/
+
         }
     }
 }
