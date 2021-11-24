@@ -14,7 +14,7 @@ namespace BusBoard.ConsoleApp
     {
             //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             fiveBus("490008660N");
-
+            Console.Read();
     }
     public static void fiveBus(string code)
     {
