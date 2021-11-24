@@ -51,9 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrival.cs" />
+    <Compile Include="PostCode.cs" />
+    <Compile Include="PostCodeHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TfLHandler.cs" />
+    <Compile Include="UserInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

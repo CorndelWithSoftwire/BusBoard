@@ -24,19 +24,11 @@ namespace BusBoard.ConsoleApp
             for(int i = 0; i <5; i++)
             {
                 Arrival a = response[i];
-                Console.WriteLine(a.VehicleID + " " + a.DestinationName + " " + a.TimeToStation + " " + a.ExpectedArrival);
+                Console.WriteLine(string.Format("{0,7} || {1,-20} || {2,4} || {3,-20}", a.VehicleID, a.DestinationName, a.TimeToStation, a.ExpectedArrival));
             }
             Console.ReadLine();
 
             
-            /*client.Authenticator = new HttpBasicAuthenticator("username","password");
-            var request = 
-            
-            var reponse = client.Execute(request);
-
-            Console.WriteLine(reponse.ContentType);
-            Console.WriteLine(reponse.Content);
-            Console.WriteLine("got this");*/
 
         }
     }

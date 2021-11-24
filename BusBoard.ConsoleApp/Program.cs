@@ -13,8 +13,10 @@ namespace BusBoard.ConsoleApp
     static void Main(string[] args)
     {
             //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            fiveBus("490008660N");
-            Console.Read();
+            //fiveBus(UserInput.GetInput("Please enter a bus stop code:"));
+            //Console.Read();
+            PostCodeHandler p = new PostCodeHandler();
+            p.GetLatLong("NG7 2FB");
     }
     public static void fiveBus(string code)
     {
