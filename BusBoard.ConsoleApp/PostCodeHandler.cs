@@ -9,17 +9,16 @@ namespace BusBoard.ConsoleApp
 {
     class PostCodeHandler
     {
-         public List<double> GetLatLong(string postcode)
+         public Dictionary<string, double> GetLatLong(string postcode)
         {
+            Dictionary<string, double> location = new Dictionary<string, double>();
             var client = new RestClient("https://api.postcodes.io");
             var uri = new RestRequest("/postcodes/" + postcode , Method.GET, DataFormat.Json);
-            PostcodeWrapper p =  client.Get<PostcodeWrapper>(uri).Data;
-            List<double> latlong = new List<double>();
-            latlong.Add(p.result.Latitude);
-            latlong.Add(p.result.Longitude);
-            Console.WriteLine("{0}, {1}", p.result.Latitude, p.result.Longitude);
+            PostCode p =  client.Get<PostcodeWrapper>(uri).Data.result;
+            location.Add("latitude", p.Latitude);
+            location.Add("longitude", p.Longitude);
             Console.Read();
-            return latlong;
+            return location;
         }
     }
 }
