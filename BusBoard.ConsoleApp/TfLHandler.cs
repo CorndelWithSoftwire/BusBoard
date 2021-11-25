@@ -31,14 +31,15 @@ namespace BusBoard.ConsoleApp
             //"StopPoint?radius=500&lat=51.49454&lon=-0.100601&stopTypes=NaptanOnstreetBusCoachStopPair"
             var client = new RestClient("https://api.tfl.gov.uk");
             
-            var uri = new RestRequest( string.Format("/StopPoint?radius=500&lat={0}&lon={1}&stopTypes=NaptanOnstreetBusCoachStopPair", location["latitude"], location["longitude"]), Method.GET, DataFormat.Json);
+            var uri = new RestRequest( string.Format("StopPoint?lat={0}&lon={1}&stopTypes=NaptanPublicBusCoachTram&radius=200&modes=bus", location["latitude"], location["longitude"]), Method.GET, DataFormat.Json);
             StopWrapper stops = client.Get <StopWrapper>(uri).Data;
 
-            Stop stop = stops.stopPoints[0];
+           for(int i = 0; i < 2;i++)
+            {
+                getArrivals(stops.stopPoints[i].naptanId);
+                Console.WriteLine("\n");
+            }
             
-            getArrivals(stop.naptanId);
-            
-
             Console.ReadLine();
         }
     }
