@@ -16,7 +16,7 @@ namespace BusBoard.ConsoleApp
             //fiveBus(UserInput.GetInput("Please enter a bus stop code:"));
             //Console.Read();
             PostCodeHandler p = new PostCodeHandler();
-            p.GetLatLong("NG7 2FB");
+            p.GetLatLong("NG72FB");
     }
     public static void fiveBus(string code)
     {

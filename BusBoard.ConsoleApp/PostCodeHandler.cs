@@ -13,11 +13,11 @@ namespace BusBoard.ConsoleApp
         {
             var client = new RestClient("https://api.postcodes.io");
             var uri = new RestRequest("/postcodes/" + postcode , Method.GET, DataFormat.Json);
-            PostCode p =  client.Get<PostCode>(uri).Data;
+            PostcodeWrapper p =  client.Get<PostcodeWrapper>(uri).Data;
             List<double> latlong = new List<double>();
-            latlong.Add(p.latitude);
-            latlong.Add(p.longitude);
-            Console.WriteLine("{0}, {1}", p.latitude.ToString(), p.longitude);
+            latlong.Add(p.result.Latitude);
+            latlong.Add(p.result.Longitude);
+            Console.WriteLine("{0}, {1}", p.result.Latitude, p.result.Longitude);
             Console.Read();
             return latlong;
         }

@@ -10,12 +10,13 @@ namespace BusBoard.ConsoleApp
     class PostCode
     {
         
-
         [JsonProperty("longitude")]
-        public double longitude { get; set; }
-        [JsonProperty("latitude")]
-        public double latitude { get; set; }
+        public double Longitude { get; set; }
 
+        [JsonProperty("latitude")]
+        public double Latitude { get; set; }
+        [JsonProperty("postcode")]
+        public string Postcode { get; set; }
 
     }
 }
