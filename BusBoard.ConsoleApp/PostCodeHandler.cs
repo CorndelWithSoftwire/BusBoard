@@ -17,7 +17,6 @@ namespace BusBoard.ConsoleApp
             PostCode p =  client.Get<PostcodeWrapper>(uri).Data.result;
             location.Add("latitude", p.Latitude);
             location.Add("longitude", p.Longitude);
-            Console.Read();
             return location;
         }
     }

@@ -12,16 +12,18 @@ namespace BusBoard.ConsoleApp
         
     static void Main(string[] args)
     {
-            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            //fiveBus(UserInput.GetInput("Please enter a bus stop code:"));
-            //Console.Read();
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             PostCodeHandler p = new PostCodeHandler();
-            p.GetLatLong("NG72FB");
+            Dictionary<string,double> location =  p.GetLatLong("SE12PF");
+            TfLHandler handler = new TfLHandler();
+            handler.getStopsWithinRadius(location);
+
     }
     public static void fiveBus(string code)
     {
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            
             //https://api.tfl.gov.uk/StopPoint/490008660N/Arrivals
             
             List<string> stops = new List<string>();  //get input from api
