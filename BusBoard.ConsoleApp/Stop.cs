@@ -9,7 +9,7 @@ namespace BusBoard.ConsoleApp
 {
     class Stop
     {
-        [JsonProperty("stationNaptan")]
+        [JsonProperty("naptanId")]
         public string naptanId { get; set; }
     }
 }
