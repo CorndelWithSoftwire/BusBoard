@@ -16,7 +16,8 @@ namespace BusBoard.ConsoleApp
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             PostCodeHandler p = new PostCodeHandler();
-            Dictionary<string,double> location =  p.GetLatLong("SE12PF");
+            
+            Dictionary<string,double> location =  p.GetLatLong(UserInput.GetInput("postcode pls: "));
             TfLHandler handler = new TfLHandler();
             handler.getStopsWithinRadius(location);
 

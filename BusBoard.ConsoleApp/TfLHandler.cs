@@ -21,6 +21,11 @@ namespace BusBoard.ConsoleApp
             var uri = new RestRequest("/StopPoint/" + code + "/Arrivals", Method.GET, DataFormat.Json);
 
             List<Arrival> response = client.Get<List<Arrival>>(uri).Data;
+            if(response.Count == 0)
+            {
+                Console.WriteLine("no busses");
+            }
+
             foreach(Arrival a in response)
             {
                 Console.WriteLine(string.Format("{0,7} || {1,-20} || {2,4} || {3,-20}", a.VehicleID, a.DestinationName, a.TimeToStation, a.ExpectedArrival));
@@ -36,6 +41,7 @@ namespace BusBoard.ConsoleApp
 
            for(int i = 0; i < 2;i++)
             {
+                Console.WriteLine(stops.stopPoints[i].CommonName);
                 getArrivals(stops.stopPoints[i].naptanId);
                 Console.WriteLine("\n");
             }
