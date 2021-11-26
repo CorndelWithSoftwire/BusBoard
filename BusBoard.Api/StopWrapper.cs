@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 
-namespace BusBoard.ConsoleApp
+namespace BusBoard.Api
 {
     class StopWrapper
     {
