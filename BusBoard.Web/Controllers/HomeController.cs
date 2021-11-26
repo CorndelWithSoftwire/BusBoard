@@ -18,12 +18,13 @@ namespace BusBoard.Web.Controllers
       // Write code here to populate the view model with info from the APIs.
       // Then modify the view (in Views/Home/BusInfo.cshtml) to render upcoming buses.
       var info = new BusInfo(selection.Postcode);
+      ViewBag.Message = "these are your busses";
       return View(info);
     }
 
     public ActionResult About()
     {
-      ViewBag.Message = "Information about this site";
+      ViewBag.Message = "It is a website for bus times in the radius of your loaction";
 
       return View();
     }

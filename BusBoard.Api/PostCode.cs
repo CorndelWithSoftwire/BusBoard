@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace BusBoard.ConsoleApp
+namespace BusBoard.Api
 {
     class PostCode
     {
