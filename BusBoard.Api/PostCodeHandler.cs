@@ -15,8 +15,11 @@ namespace BusBoard.Api
             var client = new RestClient("https://api.postcodes.io");
             var uri = new RestRequest("/postcodes/" + postcode , Method.GET, DataFormat.Json);
             PostCode p =  client.Get<PostcodeWrapper>(uri).Data.result;
+            
             location.Add("latitude", p.Latitude);
             location.Add("longitude", p.Longitude);
+            
+            
             return location;
         }
     }

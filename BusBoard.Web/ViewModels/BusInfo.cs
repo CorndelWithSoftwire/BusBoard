@@ -1,4 +1,5 @@
 ﻿using BusBoard.Api;
+using System;
 using System.Collections.Generic;
 
 namespace BusBoard.Web.ViewModels
@@ -10,7 +11,14 @@ namespace BusBoard.Web.ViewModels
       PostCode = postCode;
             TfLHandler t = new TfLHandler();
             PostCodeHandler p = new PostCodeHandler();
-            Stops = t.getStopsWithinRadius(p.GetLatLong(postCode));
+            try
+            {
+                Stops = t.getStopsWithinRadius(p.GetLatLong(postCode));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
     }
 
