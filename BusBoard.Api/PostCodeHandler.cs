@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusBoard.Api
 {
-    class PostCodeHandler
+    public class PostCodeHandler
     {
          public Dictionary<string, double> GetLatLong(string postcode)
         {

@@ -1,4 +1,5 @@
 ﻿using BusBoard.Web;
+using BusBoard.Api;
 
 namespace BusBoard.Web.Models
 {

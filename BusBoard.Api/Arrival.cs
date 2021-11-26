@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusBoard.Api
 {
-    class Arrival
+    public class Arrival
     {
         [JsonProperty("destinationName")]
         public string DestinationName { get; set; }
