@@ -19,11 +19,7 @@ namespace BusBoard.Web.Controllers
             // Write code here to populate the view model with info from the APIs.
             // Then modify the view (in Views/Home/BusInfo.cshtml) to render upcoming buses.
             var info = new BusInfo(selection.Postcode);
-        Regex regex = new Regex(@"([Gg][Ii][Rr] 0[Aa]{ 2 })| ((([A - Za - z][0 - 9]{ 1,2})| (([A - Za - z][A - Ha - hJ - Yj - y][0 - 9]{ 1,2})| (([A - Za - z][0 - 9][A - Za - z]) | ([A - Za - z][A - Ha - hJ - Yj - y][0 - 9][A - Za - z] ?))))\s?[0 - 9][A - Za - z]{ 2})");
-        if(regex.IsMatch(selection.Postcode))
-        {
-                ViewBag.Message = "these are your busses";
-        }
+               
         
       return View(info);
     }

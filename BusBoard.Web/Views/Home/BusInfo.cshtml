@@ -7,5 +7,17 @@
 
 <div class="row">
     <p>You entered postcode @Model.PostCode</p>
+    <ul>
+        @foreach (var pair in Model.Stops)
+        {
+            <li>@pair.Key</li>
+            <ul>
+                @foreach (var arrival in pair.Value)
+                {
+                    <li>@arrival.ExpectedArrival</li>
+                }
+            </ul>
+        }
+    </ul>
     <p>@ViewBag.Message</p>
 </div>
