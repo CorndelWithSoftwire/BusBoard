@@ -36,6 +36,10 @@ namespace BusBoard.Api
           
             foreach (Stop stop in stops.stopPoints)
             {
+                if(dict.ContainsKey(stop.CommonName))
+                {
+                    continue;
+                }
                 dict.Add(stop.CommonName, getArrivals(stop.naptanId));
             }
 

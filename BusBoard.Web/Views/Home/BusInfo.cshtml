@@ -14,7 +14,7 @@
             <ul>
                 @foreach (var arrival in pair.Value)
                 {
-                    <li>@arrival.ExpectedArrival</li>
+                <li> @arrival.DestinationName @arrival.ExpectedArrival  @arrival.TimeToStation @arrival.VehicleID</li>
                 }
             </ul>
         }
