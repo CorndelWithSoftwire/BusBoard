@@ -49,7 +49,7 @@ namespace BusBoard.Web.Controllers
             ViewBag.Message = "Line Info";
             var info = new LineInfo(LineID);
             return View(info);
-        }
+    }
   }
 
 }
