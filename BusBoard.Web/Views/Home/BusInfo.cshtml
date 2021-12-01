@@ -7,26 +7,29 @@
 
 <div class="row">
     <p>You entered postcode @Model.PostCode</p>
-    
-        <div class="list-group">
-            @foreach (var pair in Model.Stops)
-            {
-            <a class="list-group-item">
-                <p>@pair.Key</p>
-                        <ul>
-                            @foreach (var arrival in pair.Value)
-                            {
-                                <li> @arrival.DestinationName</li>
-                                <ul>
-                                    <li>Expected Arrival: @arrival.ExpectedArrival</li>
-                                    <li>Time to Station: @arrival.TimeToStation</li>
-                                    <li>Vehicle ID: @arrival.VehicleID</li>
-                                </ul>
-                             }
-                        </ul>
-             </a>
+
+
+    @foreach (var pair in Model.Stops)
+    {
+            <div class="list-group">
+                <ul class="list-group-item">
+                    <p>@pair.Key</p>
+                    <ul>
+                        @foreach (var arrival in pair.Value)
+                        {
+                            <p> @arrival.DestinationName</p>
+                            <ul>
+                                <li>Expected Arrival: @arrival.ExpectedArrival</li>
+                                <li>Time to Station: @arrival.TimeToStation</li>
+                                <li>Vehicle ID: @arrival.VehicleID</li>
+                            </ul>
+                        }
+                    </ul>
+
+                </ul>
+            </div>
             }
-        </div>
         
-    <p>@ViewBag.Message</p>
-</div>
+
+        <p>@ViewBag.Message</p>
+    </div>
