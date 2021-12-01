@@ -45,5 +45,16 @@ namespace BusBoard.Api
 
             return dict;
         }
+
+        public List<Stop> GetStopsOnLine(string lineID)
+        {
+            var client = new RestClient("https://api.tfl.gov.uk");
+            var uri = new RestRequest(string.Format("/Line/{0}/StopPoints", lineID), Method.GET, DataFormat.Json);
+
+            StopWrapper stops = client.Get<StopWrapper>(uri).Data;
+
+            return stops.stopPoints;
+
+        }
     }
 }

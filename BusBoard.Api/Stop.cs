@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusBoard.Api
 {
-    class Stop
+    public class Stop
     {
         [JsonProperty("commonName")]
         public string CommonName { get; set; }

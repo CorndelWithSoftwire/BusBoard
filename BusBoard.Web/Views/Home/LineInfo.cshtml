@@ -1,0 +1,23 @@
+﻿@model BusBoard.Web.ViewModels.LineInfo
+@{
+    ViewBag.Title = "Line Information";
+}
+<meta http-equiv="refresh" content="30" />
+<h2>BusInfo</h2>
+
+<div class="row">
+    <p>You entered Line ID: @Model.LineID</p>
+
+    <div class="list-group">
+        <ul class="list-group-item">
+            @foreach (var pair in Model.Stops)
+            {
+                <li>@pair.CommonName</li>
+            }
+        </ul>
+    </div>
+  
+
+
+    <p>@ViewBag.Message</p>
+</div>

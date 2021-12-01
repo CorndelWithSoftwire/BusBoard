@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace BusBoard.Api
 {
-    class StopWrapper
+    public class StopWrapper
     {
         [JsonProperty("$type")]
         public string type { get; set; }

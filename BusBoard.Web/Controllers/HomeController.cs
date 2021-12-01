@@ -39,9 +39,17 @@ namespace BusBoard.Web.Controllers
 
       return View();
     }
-        public ActionResult Error(string thrower)
-        {
+    public ActionResult Error(string thrower)
+    {
             return View();
+    }
+
+    public ActionResult LineInfo(string LineID)
+    {
+            ViewBag.Message = "Line Info";
+            var info = new LineInfo(LineID);
+            return View(info);
         }
   }
+
 }
