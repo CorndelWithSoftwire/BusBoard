@@ -2,12 +2,12 @@
 @{
     ViewBag.Title = "Bus Information";
 }
-
+<meta http-equiv="refresh" content="30" />
 <h2>BusInfo</h2>
 
 <div class="row">
     <p>You entered postcode @Model.PostCode</p>
-    <!--
+    
         <div class="list-group">
             @foreach (var pair in Model.Stops)
             {
@@ -27,6 +27,6 @@
              </a>
             }
         </div>
-        -->
+        
     <p>@ViewBag.Message</p>
 </div>
