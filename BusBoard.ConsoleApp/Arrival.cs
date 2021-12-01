@@ -22,5 +22,8 @@ namespace BusBoard.ConsoleApp
         [JsonProperty("expectedArrival")]
         public string ExpectedArrival { get; set; }
 
+        [JsonProperty("lineId")]
+        public string LineId { get; set; }
+
     }
 }
